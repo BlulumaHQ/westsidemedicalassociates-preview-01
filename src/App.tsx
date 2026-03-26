@@ -26,6 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PreviewProvider>
           <Layout>
             <Routes>
               <Route path="/" element={<Index />} />
@@ -43,6 +44,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
+        </PreviewProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
