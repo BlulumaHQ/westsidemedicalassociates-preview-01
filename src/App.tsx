@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { PreviewProvider } from "@/components/preview/PreviewContext";
 import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import ClinicInformation from "./pages/ClinicInformation";
@@ -25,23 +26,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/clinic-information" element={<ClinicInformation />} />
-            <Route path="/online-booking" element={<OnlineBooking />} />
-            <Route path="/clinic-staff" element={<ClinicStaff />} />
-            <Route path="/womens-health-menopause" element={<WomensHealth />} />
-            <Route path="/obesity-medicine" element={<ObesityMedicine />} />
-            <Route path="/skin-care" element={<SkinCare />} />
-            <Route path="/pain-clinic" element={<PainClinic />} />
-            <Route path="/mind-science" element={<MindScience />} />
-            <Route path="/physician-photos" element={<PhysicianPhotos />} />
-            <Route path="/clinic-photos" element={<ClinicPhotos />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+        <PreviewProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/clinic-information" element={<ClinicInformation />} />
+              <Route path="/online-booking" element={<OnlineBooking />} />
+              <Route path="/clinic-staff" element={<ClinicStaff />} />
+              <Route path="/womens-health-menopause" element={<WomensHealth />} />
+              <Route path="/obesity-medicine" element={<ObesityMedicine />} />
+              <Route path="/skin-care" element={<SkinCare />} />
+              <Route path="/pain-clinic" element={<PainClinic />} />
+              <Route path="/mind-science" element={<MindScience />} />
+              <Route path="/physician-photos" element={<PhysicianPhotos />} />
+              <Route path="/clinic-photos" element={<ClinicPhotos />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </PreviewProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
