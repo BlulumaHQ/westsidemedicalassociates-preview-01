@@ -140,7 +140,7 @@ const Footer = () => {
             >
               SwiftLift
             </a>
-          </p>
+          {" "}<span className="block mt-1 opacity-80" data-concept-note>Design concept for portfolio purposes only. Not the official website of Westside Medical Associates.</span></p>
         </div>
       </div>
     </footer>
